@@ -4,7 +4,7 @@ import "./form.css";
 
 const Form = props => {
   return (
-    <Card className="container bg-info">
+    <Card className="container bg-danger">
     <div className="container h-100">
       <form onSubmit={props.loadweather}>
         <div>{props.error ? error() : ""}</div>

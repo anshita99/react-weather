@@ -107,6 +107,7 @@ class App extends React.Component {
         <Form loadweather={this.getWeather} error={this.state.error} />
         <Weather
           cityname={this.state.city}
+          country={this.state.country}
           weatherIcon={this.state.icon}
           temp_celsius={this.state.celsius}
           temp_max={this.state.temp_max}

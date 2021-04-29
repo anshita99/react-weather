@@ -3,20 +3,21 @@ import { Card } from "reactstrap";
 import "./weather.css";
 
 const Weather = props => {
-  var a;
-  var i;
+  
   return (
     
     <div className="container text-dark">
       <div className="Card">
+       
       <Card className="container bg-warning" >
-        <h1 className="text-black py-3">{props.cityname}</h1>
-        <h5 className="py-1 bg-dark"></h5>
-        <h5 className="py-2">
-          {/* <i className={`wi ${props.weatherIcon} display-1`} /> */}
-          <img src={`http://openweathermap.org/img/w/${props.icon}.png`} alt="wthr img"/>
-        </h5>
+      {props.cityname?(
+        <h1 className="text-black py-3">{props.cityname}</h1>):null}
 
+        <h5 className="py-1 bg-dark"></h5>
+        {props.icon? (
+        <h5 className="py-2">
+          <i className={`wi ${props.weatherIcon} display-1`} />
+        </h5>):null} 
         {props.temp_celsius ? (
           <h1 className="py-2">Temperature<br/>{props.temp_celsius}&deg;</h1>
         ) : null}
@@ -26,12 +27,12 @@ const Weather = props => {
 
         {props.description?(
         <h4 className="py-3">
-          Weather<br/>{a = props.description.charAt(0).toUpperCase() +
+          Weather<br/>{ props.description.charAt(0).toUpperCase() +
             props.description.slice(1)}
         </h4>):null}
         
         </Card>
-        {des(a)}{i}
+        
       </div>
     </div>
     
@@ -51,9 +52,3 @@ function maxminTemp(min, max) {
   }
 }
 
-function des(b){
-  console.log('hahsukhcdysugydug',b)
-  if(b=="Haze"){
-    var i="rain"
-  }
-}

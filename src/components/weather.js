@@ -12,8 +12,8 @@ const Weather = props => {
       <Card className="container bg-warning" >
       {props.cityname?(
         <h1 className="text-black py-3">{props.cityname}</h1>):null}
-
-        <h5 className="py-1 bg-dark"></h5>
+      {props.cityname?(
+        <h5 className="py-1 bg-dark"></h5>):null}
         {props.icon? (
         <h5 className="py-2">
           <i className={`wi ${props.weatherIcon} display-1`} />

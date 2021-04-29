@@ -31,7 +31,7 @@ const Form = props => {
            
           </div>
           <div className="col-md-3 mt-md-0 mt-2 text-md-left ">
-            <button className="btn btn-success">Get Weather</button>
+            <button className="btn btn-dark">Get Weather</button>
           </div>
         </div>
       </form>
@@ -43,7 +43,7 @@ const Form = props => {
 const error = props => {
   return (
     <div className="alert alert-danger mx-5" role="alert">
-      Please Enter City and Country...!
+      U are required to enter both...!
     </div>
   );
 };

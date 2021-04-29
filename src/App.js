@@ -1,10 +1,10 @@
 import React from "react";
 import "./App.css";
-import Form from "./app_component/form";
-import Weather from "./app_component/weather";
+import Form from "./components/form";
+import Weather from "./components/weather";
 
 
-const Api_Key = "429736441cf3572838aa10530929f7cd";
+const Api_Key = "aabe2c2da317db77b9a4cc4185d61caa";
 
 class App extends React.Component {
   constructor() {
@@ -90,7 +90,7 @@ class App extends React.Component {
         error: false
       });
 
-      // seting icons
+      
       this.get_WeatherIcon(this.weatherIcon, response.weather[0].id);
 
       console.log(response);

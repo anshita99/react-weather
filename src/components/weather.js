@@ -16,7 +16,7 @@ const Weather = props => {
         <h5 className="py-1 bg-dark"></h5>):null}
         {props.icon? (
         <h5 className="py-2">
-          <i className={`wi ${props.weatherIcon} display-1`} />
+          <img src={`wi ${props.icon} display-1`} />
         </h5>):null} 
         {props.temp_celsius ? (
           <h1 className="py-2">Temperature<br/>{props.temp_celsius}&deg;</h1>
@@ -24,7 +24,20 @@ const Weather = props => {
 
         {props.temp_min?(
         <h4>Min & Max temp.{maxminTemp(props.temp_min, props.temp_max)}</h4>):null}
-
+        {props.lon?(
+          <h4 className="py-2"> Longitude & Latitude <br/>{latlon(props.lon,props.lat)}</h4>
+        ):null}
+        {/* {props.lat?(
+          <h4 className="py-2"> Latitude <br/>{}</h4>
+        ):null} */}
+        {props.deg?(
+          <h4 className="py-2"> Degree & Speed <br/>{degspe(props.deg,props.speed)}</h4>
+        ):null
+        }
+        {/* {props.speed?(
+          <h4 className="py-2"> Speed <br/>{props.speed}</h4>
+        ):null
+        } */}
         {props.description?(
         <h4 className="py-3">
           Weather<br/>{ props.description.charAt(0).toUpperCase() +
@@ -47,6 +60,28 @@ function maxminTemp(min, max) {
       <h3>
         <span className="px-4">{min}&deg;</span>
         <span className="px-4">{max}&deg;</span>
+      </h3>
+    );
+  }
+}
+
+function degspe(deg, speed) {
+  if (deg && speed) {
+    return (
+      <h3>
+        <span className="px-4">{deg}</span>
+        <span className="px-4">{speed}</span>
+      </h3>
+    );
+  }
+}
+
+function latlon(lon, lat) {
+  if (lon && lat) {
+    return (
+      <h3>
+        <span className="px-4">{lon}</span>
+        <span className="px-4">{lat}</span>
       </h3>
     );
   }

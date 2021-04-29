@@ -14,10 +14,10 @@ const Weather = props => {
         <h1 className="text-black py-3">{props.cityname}</h1>):null}
       {props.cityname?(
         <h5 className="py-1 bg-dark"></h5>):null}
-        {props.icon? (
+        {/* {props.icon? (
         <h5 className="py-2">
           <img src={`wi ${props.icon} display-1`} />
-        </h5>):null} 
+        </h5>):null}  */}
         {props.temp_celsius ? (
           <h1 className="py-2">Temperature<br/>{props.temp_celsius}&deg;</h1>
         ) : null}

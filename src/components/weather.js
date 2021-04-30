@@ -11,6 +11,7 @@ const Weather = props => {
         </h3>
       );
     }
+    return null;
   }
   
   function degSpe(deg, speed) {
@@ -22,6 +23,7 @@ const Weather = props => {
         </h3>
       );
     }
+    return null;
   }
   
   function LatLon(lon, lat) {
@@ -33,6 +35,7 @@ const Weather = props => {
         </h3>
       );
     }
+    return null;
   }
   
   return (

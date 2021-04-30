@@ -1,11 +1,23 @@
-import React from "react";
+import React,{useState} from "react";
 import "./form.css";
 
 const Form = props => {
+  const [city,setCity]=useState("")
+  const [country,setCountry]=useState("")
+  const handleChange =(e)=>{
+    setCity(e.target.value)
+  }
+  const handleCountry =(e)=>{
+    setCountry (e.target.value)
+  }
+  const handleSubmit = (e)=>{
+    e.preventDefault();
+    props.loadWeather(city,country)
+  }
   return (
     <div class="card container text-white bg-danger mb-3">
     <div className="container h-100">
-      <form onSubmit={props.loadWeather}>
+      <form onSubmit={handleSubmit}>
         <div>{props.error ? error() : ""}</div>
         <div className="row">
           <div className="col-md-3 offset-md-2">
@@ -15,6 +27,7 @@ const Form = props => {
               placeholder="City"
               name="city"
               autoComplete="off"
+              onChange={handleChange}
             />
             <br/>
           </div>
@@ -26,6 +39,7 @@ const Form = props => {
               placeholder="Country"
               name="country"
               autoComplete="off"
+              onChange={handleCountry}
             />
            
           </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
-import Form from "./components/form";
-import Weather from "./components/weather";
+import Form from "./components/Form";
+import Weather from "./components/Weather";
 
 
 const Api_Key = "aabe2c2da317db77b9a4cc4185d61caa";
@@ -31,11 +31,11 @@ class App extends React.Component {
     return cell;
   }
 
-  getWeather = async e => {
-    e.preventDefault();
+  getWeather = async (city,country) => {
+    
 
-    const country = e.target.elements.country.value;
-    const city = e.target.elements.city.value;
+    // const country = e.target.elements.country.value;
+    // const city = e.target.elements.city.value;
 
     if (country && city) {
       const api_call = await fetch(

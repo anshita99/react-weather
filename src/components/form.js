@@ -1,10 +1,9 @@
 import React from "react";
-import { Card } from "reactstrap";
 import "./form.css";
 
 const Form = props => {
   return (
-    <Card className="container bg-danger">
+    <div class="card container text-white bg-danger mb-3">
     <div className="container h-100">
       <form onSubmit={props.loadweather}>
         <div>{props.error ? error() : ""}</div>
@@ -36,7 +35,7 @@ const Form = props => {
         </div>
       </form>
     </div>
-    </Card>
+    </div>
   );
 };
 

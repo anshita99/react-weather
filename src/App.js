@@ -15,8 +15,8 @@ class App extends React.Component {
       icon: undefined,
       main: undefined,
       celsius: undefined,
-      temp_max: null,
-      temp_min: null,
+      tempMax: null,
+      tempMin: null,
       lon: null,
       deg: null,
       speed:null,
@@ -51,8 +51,8 @@ class App extends React.Component {
         main: response.weather[0].main,
         icon: response.weather[0].icon,
         celsius: this.calCelsius(response.main.temp),
-        temp_max: this.calCelsius(response.main.temp_max),
-        temp_min: this.calCelsius(response.main.temp_min),
+        tempMax: this.calCelsius(response.main.tempMax),
+        tempMin: this.calCelsius(response.main.tempMin),
         lon:response.coord.lon,
         deg :response.wind.deg,
         speed :response.wind.speed,
@@ -73,7 +73,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Form loadweather={this.getWeather} error={this.state.error} />
+        <Form loadWeather={this.getWeather} error={this.state.error} />
         <Weather
           cityname={this.state.city}
           country={this.state.country}
@@ -82,9 +82,9 @@ class App extends React.Component {
           icon={this.state.icon}
           deg={this.state.deg}
           speed={this.state.speed}
-          temp_celsius={this.state.celsius}
-          temp_max={this.state.temp_max}
-          temp_min={this.state.temp_min}
+          tempCelsius={this.state.celsius}
+          tempMax={this.state.tempMax}
+          tempMin={this.state.tempMin}
           description={this.state.description}
         />
       </div>
@@ -93,4 +93,3 @@ class App extends React.Component {
 }
 
 export default App;
-

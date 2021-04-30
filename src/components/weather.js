@@ -46,12 +46,12 @@ const Weather = props => {
       {props.cityname?(
         <h5 className="py-1 bg-dark"></h5>):null}
         
-        {props.temp_celsius ? (
-          <h1 className="py-2">Temperature<br/>{props.temp_celsius}&deg;</h1>
+        {props.tempCelsius ? (
+          <h1 className="py-2">Temperature<br/>{props.tempCelsius}&deg;</h1>
         ) : null}
 
         {props.temp_min?(
-        <h4>Min & Max temp.{MaxMinTemp(props.temp_min, props.temp_max)}</h4>):null}
+        <h4>Min & Max temp.{MaxMinTemp(props.tempMin, props.tempMax)}</h4>):null}
         {props.lon?(
           <h4 className="py-2"> Longitude & Latitude <br/>{LatLon(props.lon,props.lat)}</h4>
         ):null}

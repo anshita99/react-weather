@@ -5,7 +5,7 @@ const Form = props => {
   return (
     <div class="card container text-white bg-danger mb-3">
     <div className="container h-100">
-      <form onSubmit={props.loadweather}>
+      <form onSubmit={props.loadWeather}>
         <div>{props.error ? error() : ""}</div>
         <div className="row">
           <div className="col-md-3 offset-md-2">
